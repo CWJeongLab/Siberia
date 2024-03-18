@@ -9,7 +9,7 @@ Mbuti population was also used as an outgroup in this analysis, and the followin
 Then, Middle Holocene populations were systematically added by following orders: irk030, Dzhylinda-1, WestBaikal_EN, Yakutia_MN, Saqqaq, WestBaikal_LNBA, and Yakutia_LN.
 The estimated branch length and admixture proportions were converted to dot file by following code, and we plotted admixture graph using Graphviz 6.0.1.
 
-## Run qpGraph
+## Run qpGraph in R
     # Run below code in R  
   
     library(admixtools)  
@@ -27,4 +27,9 @@ The estimated branch length and admixture proportions were converted to dot file
     Z = round(qpg_results$f4['z'] %>% slice_min(z,n=1,with_ties=F),2)  
     score = round(qpg_results$score,2)  
     plot_graph(qpg_results$edges,title=paste("worst Z: ",Z,"\nscore: ",score,sep=""))  
+
+
+## Convert edge file into dot file in python
+
+## Plot the results using Graphviz
   
