@@ -1,6 +1,6 @@
 # 3. f-statistics calculation
 
-## introduction
+## Introduction
 
 We calculated the f-statistics by qp3pop and f₄ functions from the R library ADMIXTOOLS2 v2.0.0. (https://github.com/uqrmaie1/admixtools, publication pending).  
 We calculated outgroup-fз using the central African population Mbuti as an outgroup to measure shared genetic drift between target populations.  
