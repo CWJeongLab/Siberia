@@ -14,4 +14,9 @@ We used the following populations as a base outgroup set for both qpWave and qpA
 8. Early Neolithic northern East Asian Yumin from Inner Mongolia (n=1) (Yang et al., 2020)
 9. Neolithic southern Russia West_Siberia_N (n=3) (Narasimhan et al., 2019)
   
-In addition, when multiple admixture models were feasible, qpAdm rotating approach, which systematically shifts candidates from source to outgroup, was used to find the best proximal source. 
+In addition, when multiple admixture models were feasible, qpAdm rotating approach, which systematically shifts candidates from source to outgroup, was used to find the best proximal source.  
+  
+## qpWave analysis
+
+
+## qpAdm analysis
