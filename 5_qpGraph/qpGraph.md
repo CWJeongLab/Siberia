@@ -10,7 +10,7 @@ Then, Middle Holocene populations were systematically added by following orders:
 The estimated branch length and admixture proportions were converted to dot file by following code, and we plotted admixture graph using Graphviz 6.0.1.
 
 ## Run qpGraph
-    \# Run below code in R  
+    # Run below code in R  
   
     library(admixtools)  
     library(tidyverse)  
