@@ -11,6 +11,7 @@ The estimated branch length and admixture proportions were converted to dot file
 
 ## Run qpGraph
   \# Run below code in R  
+  
   library(admixtools)  
   library(tidyverse)  
   library(magrittr)  
@@ -26,3 +27,4 @@ The estimated branch length and admixture proportions were converted to dot file
   Z = round(qpg_results$f4['z'] %>% slice_min(z,n=1,with_ties=F),2)  
   score = round(qpg_results$score,2)  
   plot_graph(qpg_results$edges,title=paste("worst Z: ",Z,"\nscore: ",score,sep=""))  
+  
