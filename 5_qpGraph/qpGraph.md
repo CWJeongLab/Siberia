@@ -28,8 +28,40 @@ The estimated branch length and admixture proportions were converted to dot file
     score = round(qpg_results$score,2)  
     plot_graph(qpg_results$edges,title=paste("worst Z: ",Z,"\nscore: ",score,sep=""))  
 
+    # Save the results as edge file
+    edges <- as.data.frame(qpg_results$edges)  
+    write.csv(edges,"result_edge.csv", row.names=F,quote=F)  
 
 ## Convert edge file into dot file in python
+    # Run below code in python
+    import pandas as pd
+    INPUT = "result_edge.csv"
+    df = pd.read_csv(INPUT)
 
+    node_list = list(set(df['from'].to_list() + df['to'].to_list()))
+    pop_list = ["R","Mbuti","WHG","EastBaikal_N","MA1","USR1","irk030","Dzhylinda_1","WestBaikal_LNBA",
+             "WestBaikal_EN","Yakutia_MN","Yakutia_LN","Saqqaq"] # target populations
+    outfile = open(INPUT.replace('_edge.csv','dot'),'w')
+    print("digraph G {", file=outfile, end="\n")
+    print('size = \"7.5,10\" ;', file=outfile, end="\n")
+    print('labelloc = \"t\" ;', file=outfile, end="\n")
+    print('label = \"worst Z = -2.77\" ;', file=outfile, end="\n")
+    for node in node_list:
+    if node not in pop_list:
+        print(node, ' [label = \"\" shape=\"point\" size=1 color=\"white\"];',file=outfile,end="\n")
+
+    for i in range(len(df)):
+    f, t = df.loc[i,['from','to']]
+    if df.loc[i,'type'] == 'edge':
+        label = int(round(df.loc[i,'weight']*1000))
+        print(f,"->",t, "[ label = ",'\"',label, '\"];',sep="",file=outfile,end="\n")
+    else:
+        label = int(round(df.loc[i,'weight']*100))
+        print(f,"->",t, "[ style=dotted, label = ",'\"',label, '%\"];',sep="",file=outfile, end="\n")
+    print("}",file=outfile)
+    outfile.close()
+    
 ## Plot the results using Graphviz
-  
+    dot -Tpdf result.dot -o result.pdf
+
+If you want to change the color of edge or node, you can find the manual of Graphviz and dot language in here: https://graphviz.org/
