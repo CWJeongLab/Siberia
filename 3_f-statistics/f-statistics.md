@@ -51,7 +51,6 @@ Populations used in f-statistics are listed in Table S2, and the results of f-st
     pdf(paste(target,"_outgroupf3.pdf",sep=""),8,8)
     print(p)
     dev.off()  
-![outgroupf3](Siberia/3_f-statistics/Dzhylinda-1_outgroupf3.pdf)
 
 ## Calculate f4 statistics
     # Run below code in R
