@@ -1,0 +1,7 @@
+Human	/home/References/Human/hs37d5.fa
+Horse	/home/References/Horse/equCab3.fa
+Cattle	/home/References/Cattle/ARS-UCD1.2.chrY.fa
+Sheep	/home/References/Sheep/oviAri4.fa
+Goat	/home/References/Goat/Saanen_v1_MT.fa
+dog	/home/References/Dog/canFam4.fa
+reindeer	/home/References/Reindeer/Reindeer_assembly.fa

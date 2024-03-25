@@ -1,0 +1,3 @@
+test001	test001.A0101	test001.A0101.SG1.1	"REALPATH/test001_1.fastq.gz,REALPATH/test001_2.fastq.gz"	ssLib	Human	0
+test002	test002.A0101	test002.A0101.SG1.1	"REALPATH/test002_1.fastq.gz,REALPATH/test002_2.fastq.gz"	non-UDG	Human	10
+test003	test003.A0101	test003.A0101.SG1.1	"REALPATH/test003_1.fastq.gz,REALPATH/test003_2.fastq.gz"	half-UDG	Human	3
