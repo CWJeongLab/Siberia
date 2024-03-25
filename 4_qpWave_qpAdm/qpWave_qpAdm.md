@@ -16,7 +16,23 @@ We used the following populations as a base outgroup set for both qpWave and qpA
   
 In addition, when multiple admixture models were feasible, qpAdm rotating approach, which systematically shifts candidates from source to outgroup, was used to find the best proximal source.  
   
-## qpWave analysis
-
-
-## qpAdm analysis
+## qpWave analysis in R
+    # Run below code in R
+    # The code below gives an example of qpWave analysis on UKY, Kolyma_M, and irk030
+    library(admixtools)
+    my_plink_dir <- "realpath_of_plink_data"
+    left <- c("UKY","Kolyma_M","irk030")
+    right <- c("Mbuti.DG","Ami.DG","Mixe.DG","Onge.DG","Iran_N","Villabruna","Anatolia_N","Yumin","West_Siberia_N")
+    qpwave(my_plink_dir,left,right)
+## qpAdm analysis in R
+    # Run below code in R
+    # The code below gives an example of qpAdm analysis testing WestBaikal_LNBA as an admixture between EastBaikal_N and irk030
+    library(admixtools)
+    my_plink_dir <- "realpath_of_plink_data"
+    left <- c("UKY","Kolyma_M","irk030")
+    right <- c("Mbuti.DG","Ami.DG","Mixe.DG","Onge.DG","Iran_N","Villabruna","Anatolia_N","Yumin","West_Siberia_N")
+    qpwave(my_plink_dir,left,right)
+    left <- c("EastBaikal_N", "irk030")
+    right <- c("Mbuti.DG","Ami.DG","Mixe.DG","Onge.DG","Iran_N","Villabruna","Anatolia_N","Yumin","West_Siberia_N")
+    target <- c("WestBaikal_LNBA")
+    qpadm(my_plink_dir, left, right, target)
