@@ -25,7 +25,8 @@ Samples used in PCA are listed in Table S2.
         echo -e "altnormstype: NO\nnumoutevec: 20\nnumoutlieriter: 0\nnumoutlierevec: 0" >> ${parf}
         echo -e "outliersigmathresh: 6.0\nnumthreads: 8\nqtmode: 0\nlsqproject: YES" >> ${parf}
     done
-    ## Run smartpca
+    
+    # Run smartpca
     for K in $(seq 1 2); do
         of2=${of1}"_"${K}
         smartpca -p ${of2}.par > ${of2}.log
